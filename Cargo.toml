@@ -1,0 +1,20 @@
+[package]
+name = "torgap-opentimestamps"
+version = "0.1.0"
+authors = ["gorazdko <gorazdko@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+#log = "0.3"
+# http deps
+#tokio = { version = "0.2.23", features = ["full"], optional = true }
+#warp = { version = "0.2.5", optional = true }
+pretty_env_logger = "0.4"
+tokio = { version = "0.2", features = ["full"] }
+warp = "0.2"
+bytes = "0.5"
+futures = { version = "0.3", default-features = false, features = ["alloc"] }
+
+[dev-dependencies]

@@ -1,8 +1,9 @@
-# Blockchain Commons `$projectname`
+# Blockchain Commons `torgap-opentimestamps`
 
-### _by $major-authors_
+### Christopher Allen and Gorazd Kovacic
 
-**`$ProjectDescription`** is …
+Run [OpenTimestamps](https://opentimestamps.org/) as a Tor onion service. You can install it
+on a [Linode](https://cloud.linode.com) Debian server with a [StackScript](StackScript/torgap-opentimestamps.sh)
 
 ## Additional Information
 
@@ -12,13 +13,14 @@ The following files contain…
 
 ## Status - Late Alpha
 
-` $projectname`  is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
+` torgap-opentimestamps`  is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
 
 ### Roadmap
 
 ## Prerequisites
 
-## Insllation Instructions
+## Installation Instructions
+
 
 ## Usage Instructions
 
@@ -30,37 +32,35 @@ In most cases, the authors, copyright, and license for each file reside in heade
 
 This table below also establishes provenance (repository of origin, permalink, and commit id) for files included from repositories that are outside of this repo. Contributors to these files are listed in the commit history for each repository, first with changes found in the commit history of this repo, then in changes in the commit history of their repo of their origin.
 
-| File      | From                                                         | Commit                                                       | Authors & Copyright (c)                                | License                                                     |
-| --------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------- |
-| exception-to-the-rule.c or exception-folder | [https://github.com/community/repo-name/PERMALINK](https://github.com/community/repo-name/PERMALINK) | [https://github.com/community/repo-name/commit/COMMITHASH]() | 2020 Exception Author  | [MIT](https://spdx.org/licenses/MIT)                        |
+[No external files]                     |
 
 ### Dependencies
 
-To build  `$projectname` you'll need to use the following tools:
+To build  `torgap-opentimestamps` you'll need to use the following tools:
 
 - autotools - Gnu Build System from Free Software Foundation ([intro](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)).
 
 ### Derived from…
 
-This  `$projectname` project is either derived from or was inspired by:
+This  `torgap-opentimestamps` project is either derived from or was inspired by:
 
 - [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
 
 ### Used with…
 
-These are other projects that work with or leverage `$projectname`:
+These are other projects that work with or leverage `torgap-opentimestamps`:
 
 - [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
 
 ## Financial Support
 
-`$projectname` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
+`torgap-opentimestamps` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
 
-To financially support further development of `$projectname` and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
+To financially support further development of `torgap-opentimestamps` and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
 
 ### Project Sponsors
 
-Thanks to our project sponsors for their support of `$projectname`:
+Thanks to our project sponsors for their support of `torgap-opentimestamps`:
 
 $sponsor-logo-with-link
 
@@ -93,6 +93,7 @@ The following people directly contributed to this repository. You can add your n
 | Name              | Role                | Github                                            | Email                                 | GPG Fingerprint                                    |
 | ----------------- | ------------------- | ------------------------------------------------- | ------------------------------------- | -------------------------------------------------- |
 | Christopher Allen | Principal Architect | [@ChristopherA](https://github.com/ChristopherA) | \<ChristopherA@LifeWithAlacrity.com\> | FDFE 14A5 4ECB 30FC 5D22  74EF F8D3 6C91 3574 05ED |
+| Gorazd Kovacic | Maintainer | [@gorazdko](https://github.com/gorazdko) | \<gorazdko@gmail.com\> | 41F0 EA16 99A7 4C1E 2FA4 1B53 8CF9 6BC3 FF9D BBCE |
 
 ## Responsible Disclosure
 
