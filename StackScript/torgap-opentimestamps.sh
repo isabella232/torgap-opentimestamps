@@ -35,7 +35,7 @@
 #
 # <UDF name="torV3AuthKey" Label="x25519 Public Key" default="" example="descriptor:x25519:JBFKJBEUF72387RH2UHDJFHIUWH47R72UH3I2UHD" optional="true"/>
 # PUBKEY=
-# <UDF name="btctype" label="Installation Type" oneOf="None, Mainnet,Pruned Mainnet,Testnet,Pruned Testnet,Private Regtest" default="None" example="Bitcoin node type. If None, timestamp verification with public Esplora explorer" optional="true"/>
+# <UDF name="btctype" label="Bitcoin Core Installation Type" oneOf="None, Mainnet,Pruned Mainnet,Testnet,Pruned Testnet,Private Regtest" default="None" example="Bitcoin node type. If None, timestamp verification will be performed by a public Esplora explorer" optional="true"/>
 # BTCTYPE=
 # <UDF name="userpassword" label="StandUp Password" example="Password to for the standup non-privileged account." />
 # USERPASSWORD=
@@ -183,6 +183,12 @@ popd
 chown -R standup torgap-opentimestamps
 
 
+if [[ "$BTCTYPE" != "None" ]]; then
+	OTS_FLAG="bitcoind"
+else
+	OTS_FLAG="none"
+fi
+
 # Setup torgap-opentimestamps as a service
 echo "$0 - Setting up torgap-opentimestamps as a systemd service."
 
@@ -199,7 +205,7 @@ Restart=always
 User=root
 Environment=PATH=/home/someUser/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.nvm/versions/node/v15.4.0/bin
 EnvironmentFile=/root/.nvm/versions/node/v15.4.0/bin/ots-cli.js
-ExecStart=/home/standup/torgap-opentimestamps/target/release/torgap-opentimestamps
+ExecStart=/home/standup/torgap-opentimestamps/target/release/torgap-opentimestamps $OTS_FLAG
 
 [Install]
 WantedBy=multi-user.target
@@ -363,6 +369,11 @@ rpcpassword=$RPCPASSWORD
 rpcallowip=127.0.0.1
 debug=tor
 EOF
+
+# This is a hack for ots-cli.js to work properly, as it is looking for a config file
+# in a wrong place when run with root
+mkdir $HOME/.bitcoin
+ln -s ~standup/.bitcoin/bitcoin.conf $HOME/.bitcoin/bitcoin.conf
 
 if [[ "$BTCTYPE" == "" ]]; then
 

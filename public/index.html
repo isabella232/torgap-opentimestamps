@@ -11,29 +11,63 @@
 	}
 </style>
 
-<body>
+<body onload="myFunction('Timestamp'); document.getElementsByName('opt')[0].checked = true;">
 	<h1>OpenTimestamps</h1>
 
-	<p>If you select a file and submit, the file will be timestamped. The ots file will
-		be offered to you for download. <br />
+	<p>What would you like to do:</p>
+	<form>
+		<input type="radio" name="opt" onclick="myFunction(this.value)" value="Timestamp">Timestamp a file<br>
+		<input type="radio" name="opt" onclick="myFunction(this.value)" value="Verify">Verify a timestamp<br>
+		<input type="radio" name="opt" onclick="myFunction(this.value)" value="Upgrade">Upgrade ots file<br>
 
-		If you also choose the corresponding ots file, the server will verifiy the timestamp of the file.
-	</p>
+	</form><br />
 
-	<h3>Select a file:</h3>
 
-	<input type="file" id="myfile" name="myfile"><br /><br />
+	<div style="height : 200px">
+		<div id="select_file">
+			<h3>Select a file:</h3>
 
-	<h3>Select ots file:</h3>
+			<input type="file" id="myfile" name="myfile"><br /><br />
+		</div>
+		<div id="select_ots">
 
-	<input type="file" id="file_ots"><br /><br />
+			<h3>Select ots file:</h3>
+
+			<input type="file" id="file_ots"><br /><br />
+		</div>
+	</div>
 
 	<h3>Submit:</h3>
-	<button onclick="timestamp()">Submit</button>
-	<button onclick="clean()">Clean</button><br /><br />
+	<button onclick="timestamp()" id="timestamp_submit">Submit</button>
 
 	<h3>Result:</h3>
 	<p id="status">N/A</p>
+
+
+	<script>
+		function myFunction(val) {
+
+
+			clean()
+
+
+			// hide all elements by default
+			var x = document.getElementById("select_file");
+			var y = document.getElementById("select_ots");
+
+			x.style.display = "none";
+			y.style.display = "none";
+
+			if (val == "Timestamp") {
+				x.style.display = "block";
+			} else if (val == "Verify") {
+				x.style.display = "block";
+				y.style.display = "block";
+			} else {
+				y.style.display = "block";
+			}
+		}
+	</script>
 
 	<script>
 		function clean() {
@@ -41,7 +75,60 @@
 			document.getElementById('file_ots').value = "";
 		}
 
+
+		async function tm_upgrade() {
+			let file_ots = document.getElementById('file_ots').files[0];
+			file_name = file_ots.name;
+			if (true) {
+				console.log("reading ots file");
+				const formData = new FormData();
+				formData.append('ots', file_ots);
+
+				fetch('upgrade', {
+						method: 'POST',
+						body: formData
+					}).then(response => {
+						console.log(response.status)
+						if (response.status != 200) {
+							return response.text();
+						}
+						return response.blob()
+					})
+					.then(blob => {
+						if (typeof(blob) == "string") {
+							throw new Error(blob);
+						}
+
+						var url = window.URL.createObjectURL(blob);
+						var a = document.createElement('a');
+						a.href = url;
+						a.download = file_name;
+						document.body.appendChild(a); // we need to append the element to the dom -> otherwise it will not work in firefox
+						a.click();
+						a.remove(); //afterwards we remove the element again
+						document.getElementById("status").innerHTML = "Upgraded OTS file ready for download.";
+					})
+					.catch(err => {
+						console.log("request failed", err)
+						document.getElementById("status").innerHTML = err.message;
+					});
+				return
+			}
+
+		};
+
 		function timestamp() {
+
+			let file_ots = document.getElementById('file_ots').files[0];
+			if (document.getElementsByName('opt')[2].checked) {
+				console.log("Ots upgrade checked ");
+				console.log(file_ots);
+
+				tm_upgrade();
+				return;
+			}
+
+
 
 			let files = document.getElementById('myfile');
 			console.log(files.value);
@@ -53,10 +140,6 @@
 			file = files.files[0];
 			file_name = file.name;
 
-			let file_ots = document.getElementById('file_ots').files[0];
-			console.log("+++");
-			console.log(file);
-			console.log(file_ots);
 
 			var fr_file = new FileReader();
 			var fr_ots = new FileReader();
