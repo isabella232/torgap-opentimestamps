@@ -3,13 +3,10 @@
 ### Christopher Allen and Gorazd Kovacic
 
 Run [OpenTimestamps](https://opentimestamps.org/) as a Tor onion service. You can install it
-on a [Linode](https://cloud.linode.com) Debian server with a [StackScript](StackScript/torgap-opentimestamps.sh)
+on a [Linode](https://cloud.linode.com) Debian server with a [StackScript](StackScript/torgap-opentimestamps.sh).
+The StackScript allows you to choose to install Bitcoin Core to perform verification of timestamps. Otherwise, the verification
+is delegated to a public Esplora explorer. You can also choose to timestamp files with publicly available Calendar servers and upgrade the incomplete timestamps.
 
-## Additional Information
-
-The following files contain…
-
-* `$ListOfEssentialDocs`
 
 ## Status - Late Alpha
 
@@ -17,10 +14,13 @@ The following files contain…
 
 ### Roadmap
 
+The StackScript may implement installing a private Calendar server in future.
+
 ## Prerequisites
 
 ## Installation Instructions
 
+Run the StackScript on a [Linode](https://cloud.linode.com) Debian server.
 
 ## Usage Instructions
 
@@ -36,9 +36,9 @@ This table below also establishes provenance (repository of origin, permalink, a
 
 ### Dependencies
 
-To build  `torgap-opentimestamps` you'll need to use the following tools:
+To build  `torgap-opentimestamps` manually (without a StackScript), you'll need to use the following tools:
 
-- autotools - Gnu Build System from Free Software Foundation ([intro](https://www.gnu.org/software/automake/manual/html_node/Autotools-Introduction.html)).
+[Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
 ### Derived from…
 
