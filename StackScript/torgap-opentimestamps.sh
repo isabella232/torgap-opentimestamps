@@ -1,13 +1,13 @@
 #!/bin/bash
 
-#  torgap-demo.sh - Installs torgap-demo behind a tor address derived from a minisign secret key
-#  Key conversion is made by torgap-sig-cli-rust.
-#  Once set up, onion service offers to download and verify a signed text file.
+#  torgap-opentimestamps.sh - Installs torgap-opentimestamps behind a Tor onion address.
+#  The StackScript allows you to choose to install Bitcoin Core to perform verification of timestamps.
+#  Otherwise, the verification is delegated to a public Esplora explorer. You can also choose to
+#  timestamp files with publicly available Calendar servers and upgrade the incomplete timestamps.
 #
-#  Created by @gorazdko 2020-11-19
+#  Created by @gorazdko 14.12.2020
 #
-#  https://github.com/BlockchainCommons/torgap-demo
-#  https://github.com/BlockchainCommons/torgap-sig-cli-rust
+#  https://github.com/BlockchainCommons/torgap-opentimestamps
 #
 #  Based on LinodeStandUp.sh by Peter Denton
 #  source: https://github.com/BlockchainCommons/Bitcoin-Standup-Scripts/blob/master/Scripts/LinodeStandUp.sh
@@ -17,16 +17,16 @@
 # It is also recommended to delete the /standup.log, and
 # /standup.err files.
 
-# torgap-demo.sh sets Tor and torgap-demo as systemd services so that they
+# torgap-opentimestamps.sh sets Tor and torgap-opentimestamps as systemd services so that they
 # start automatically after crashes or reboots. If you supply a SSH_KEY in
 # the arguments it allows you to easily access your node via SSH using your rsa
 # pubkey, if you add SYS_SSH_IP's it will only accept SSH connections from those
 # IP's.
 
-# torgap-demo.sh will create a user called standup, and assign the optional
+# torgap-opentimestamps.sh will create a user called standup, and assign the optional
 # password you give it in the arguments.
 
-# torgap-demo.sh will create two logs in your root directory, to read them run:
+# torgap-opentimestamps.sh will create two logs in your root directory, to read them run:
 # $ cat standup.err
 # $ cat standup.log
 
