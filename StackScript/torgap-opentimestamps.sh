@@ -203,7 +203,7 @@ Requires=tor.service
 Type=simple
 Restart=always
 User=root
-Environment=PATH=/home/someUser/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.nvm/versions/node/v15.4.0/bin
+Environment=PATH=/home/standup/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.nvm/versions/node/v15.4.0/bin
 EnvironmentFile=/root/.nvm/versions/node/v15.4.0/bin/ots-cli.js
 ExecStart=/home/standup/torgap-opentimestamps/target/release/torgap-opentimestamps $OTS_FLAG
 
