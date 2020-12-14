@@ -46,7 +46,7 @@ To build  `torgap-opentimestamps` manually (without a StackScript), you'll need 
 
 This  `torgap-opentimestamps` project is either derived from or was inspired by:
 
-- [community/repo-name/](https://github.com/community/repo-name) — Repo that does what, by [developer](https://github.com/developer)  or from  [community](https://community.com).
+- [OpenTimestamps](https://opentimestamps.org/) —  by [Peter Todd](https://github.com/petertodd)
 
 ### Used with…
 
