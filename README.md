@@ -1,11 +1,13 @@
 # Blockchain Commons `torgap-opentimestamps`
 
-### Christopher Allen and Gorazd Kovacic
+### by Christopher Allen and Gorazd Kovacic
 
 Run [OpenTimestamps](https://opentimestamps.org/) as a Tor onion service. You can install it
 on a [Linode](https://cloud.linode.com) Debian server with a [StackScript](StackScript/torgap-opentimestamps.sh).
 The StackScript allows you to choose to install Bitcoin Core to perform verification of timestamps. Otherwise, the verification
 is delegated to a public Esplora explorer. You can also choose to timestamp files with publicly available Calendar servers and upgrade the incomplete timestamps.
+
+You can see the site hosted here: `http://3xcaaswwserqnox56z7d7wifwyxm2jsdv4fniffym5jwncqx3qr7uzid.onion/`
 
 
 ## Status - Late Alpha
