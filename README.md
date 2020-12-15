@@ -2,29 +2,29 @@
 
 ### by Christopher Allen and Gorazd Kovacic
 
-Run [OpenTimestamps](https://opentimestamps.org/) as a Tor onion service. You can install it
-on a [Linode](https://cloud.linode.com) Debian server with a [StackScript](StackScript/torgap-opentimestamps.sh).
-The StackScript allows you to choose to install Bitcoin Core to perform verification of timestamps. Otherwise, the verification
-is delegated to a public Esplora explorer. You can also choose to timestamp files with publicly available Calendar servers and upgrade the incomplete timestamps.
+Run [OpenTimestamps](https://opentimestamps.org/) as a Tor onion service. 
 
-You can see the site hosted here: `http://3xcaaswwserqnox56z7d7wifwyxm2jsdv4fniffym5jwncqx3qr7uzid.onion/`
+## Additional Information
 
+* [StackScript](StackScript/torgap-opentimestamps.sh) — Installation StackScript for Linode
+* [http://3xcaaswwserqnox56z7d7wifwyxm2jsdv4fniffym5jwncqx3qr7uzid.onion/](http://3xcaaswwserqnox56z7d7wifwyxm2jsdv4fniffym5jwncqx3qr7uzid.onion/) — Example Deployment
 
 ## Status - Late Alpha
 
-` torgap-opentimestamps`  is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
+`torgap-opentimestamps`  is currently under active development and in the late alpha testing phase. It should not be used for production tasks until it has had further testing and auditing.
 
 ### Roadmap
 
 The StackScript may implement installing a private Calendar server in future.
 
-## Prerequisites
-
 ## Installation Instructions
 
-Run the StackScript on a [Linode](https://cloud.linode.com) Debian server.
+You can install `torgap-opentimestamps` on a [Linode](https://cloud.linode.com) Debian server with a [StackScript](StackScript/torgap-opentimestamps.sh).
 
-## Usage Instructions
+The StackScript allows you to choose to install Bitcoin Core to perform verification of timestamps. Otherwise, the verification
+is delegated to a public Esplora explorer. 
+
+You can also choose to timestamp files with publicly available Calendar servers and upgrade the incomplete timestamps.
 
 ## Origin, Authors, Copyright & Licenses
 
@@ -40,7 +40,7 @@ This table below also establishes provenance (repository of origin, permalink, a
 
 To build  `torgap-opentimestamps` manually (without a StackScript), you'll need to use the following tools:
 
-[Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+- [Rust and Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
 ### Derived from…
 
@@ -59,14 +59,6 @@ These are other projects that work with or leverage `torgap-opentimestamps`:
 `torgap-opentimestamps` is a project of [Blockchain Commons](https://www.blockchaincommons.com/). We are proudly a "not-for-profit" social benefit corporation committed to open source & open development. Our work is funded entirely by donations and collaborative partnerships with people like you. Every contribution will be spent on building open tools, technologies, and techniques that sustain and advance blockchain and internet security infrastructure and promote an open web.
 
 To financially support further development of `torgap-opentimestamps` and other projects, please consider becoming a Patron of Blockchain Commons through ongoing monthly patronage as a [GitHub Sponsor](https://github.com/sponsors/BlockchainCommons). You can also support Blockchain Commons with bitcoins at our [BTCPay Server](https://btcpay.blockchaincommons.com/).
-
-### Project Sponsors
-
-Thanks to our project sponsors for their support of `torgap-opentimestamps`:
-
-$sponsor-logo-with-link
-
-$sponsor-description
 
 ## Contributing
 
