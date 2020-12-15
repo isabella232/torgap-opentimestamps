@@ -1,6 +1,7 @@
 # Blockchain Commons `torgap-opentimestamps`
 
-### by Christopher Allen and Gorazd Kovacic
+### _by [Gorazd Kovacic](https://github.com/gorazd) and [Christopher Allen](https://github.com/ChristopherA)_
+* <img src="https://raw.githubusercontent.com/BlockchainCommons/torgap/master/images/logos/torgap.png" width=30 valign="bottom"> ***part of the [torgap](https://github.com/BlockchainCommons/torgap/blob/master/README.md) technology family***
 
 Run [OpenTimestamps](https://opentimestamps.org/) as a Tor onion service. 
 
