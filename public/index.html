@@ -13,8 +13,13 @@
 
 <body onload="myFunction('Timestamp'); document.getElementsByName('opt')[0].checked = true;">
 	<h1>OpenTimestamps</h1>
+	<h3>Abstract</h3>
+	<div> <a href="https://opentimestamps.org/">OpenTimestamps</a> is a timestamping proof standard.
+		You can automatically install this service <br /> with a StackScript which can be found at
+		<a href="https://github.com/BlockchainCommons/torgap-opentimestamps">https://github.com/BlockchainCommons/torgap-opentimestamps</a>
+	</div>
 
-	<p>What would you like to do:</p>
+	<h3>What would you like to do</h3>
 	<form>
 		<input type="radio" name="opt" onclick="myFunction(this.value)" value="Timestamp">Timestamp a file<br>
 		<input type="radio" name="opt" onclick="myFunction(this.value)" value="Verify">Verify a timestamp<br>
@@ -41,7 +46,11 @@
 	<button onclick="timestamp()" id="timestamp_submit">Submit</button>
 
 	<h3>Result:</h3>
-	<p id="status">N/A</p>
+	<p id="status" style="height : 35px">N/A</p>
+
+	<br /><br />
+	<p>Powered by:</p>
+	<img src="blockchain-commons-logo.png" alt="Blockchain Commons">
 
 
 	<script>
