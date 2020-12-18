@@ -238,7 +238,9 @@ async fn main() {
                 let mut file = File::open(format!("/tmp/{}.ots", filename)).unwrap();
                 file.read_to_end(&mut data).unwrap();
                 std::fs::remove_file(format!("/tmp/{}.ots", filename)).unwrap();
-                std::fs::remove_file(format!("/tmp/{}.ots.bak", filename)).unwrap();
+                if std::fs::metadata(format!("/tmp/{}.ots.bak", filename)).is_ok() {
+                    std::fs::remove_file(format!("/tmp/{}.ots.bak", filename)).unwrap();
+                }
                 Response::builder()
                     .header("Content-Type", "application/octet-stream")
                     .body(data)
